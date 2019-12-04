@@ -36,7 +36,7 @@ class HomePageTemp extends StatelessWidget {
           ListTile(
             title: Text(item),
             subtitle: Text('Cualquier cosa'),
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.insert_emoticon),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () => {},
           ),
