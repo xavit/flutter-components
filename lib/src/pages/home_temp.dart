@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTemp extends StatelessWidget {
-  const HomePageTemp({Key key}) : super(key: key);
+  final opciones = ['uno', 'dos', 'tres', 'cuatro', 'cinco'];
 
   @override
   Widget build(BuildContext context) {
@@ -11,22 +11,21 @@ class HomePageTemp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Componente Temp'),
         ),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text('ListTile'),
-            ),
-            Divider(),
-            ListTile(
-              title: Text('ListTile'),
-            ),
-            Divider(),
-            ListTile(
-              title: Text('ListTile'),
-            ),
-          ],
-        ),
+        body: ListView(children: _crearItems()),
       ),
     );
+  }
+
+  List<Widget> _crearItems() {
+    List<Widget> lista = new List<Widget>();
+
+    for (String opt in opciones) {
+      final tempWidget = ListTile(
+        title: Text(opt),
+      );
+      lista..add(tempWidget)..add(Divider());
+    }
+
+    return lista;
   }
 }
