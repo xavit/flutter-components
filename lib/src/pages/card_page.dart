@@ -14,7 +14,34 @@ class CardPage extends StatelessWidget {
           SizedBox(
             height: 30.0,
           ),
-          _cardTipo2()
+          _cardTipo2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardtipo1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardTipo2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardtipo1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardTipo2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardtipo1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardTipo2(),
+          SizedBox(
+            height: 30.0,
+          ),
         ],
       ),
     );
@@ -22,6 +49,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardtipo1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -51,12 +80,12 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Container(
+      // elevation: 10.0,
       child: Column(
         children: <Widget>[
           FadeInImage(
-            image: NetworkImage(
-                'http://hdwpro.com/wp-content/uploads/2019/02/Best-Landscape-4K.jpg'),
+            image: new NetworkImage('https://picsum.photos/1000/667'),
             placeholder: AssetImage('data/assets/jar-loading.gif'),
             fit: BoxFit.cover,
             height: 300.0,
@@ -68,10 +97,29 @@ class CardPage extends StatelessWidget {
           //       'http://hdwpro.com/wp-content/uploads/2019/02/Best-Landscape-4K.jpg'),
           // ),
           Container(
-            child: Text('Algún subtitulo con texto a elección'),
+            child: Text(
+              'Algún subtitulo con texto a elección',
+            ),
             padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 30.0),
           )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
