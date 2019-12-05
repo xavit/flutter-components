@@ -9,7 +9,13 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(10.0),
-        children: <Widget>[_cardtipo1()],
+        children: <Widget>[
+          _cardtipo1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardTipo2()
+        ],
       ),
     );
   }
@@ -38,6 +44,32 @@ class CardPage extends StatelessWidget {
                 onPressed: () => {},
               )
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image: NetworkImage(
+                'http://hdwpro.com/wp-content/uploads/2019/02/Best-Landscape-4K.jpg'),
+            placeholder: AssetImage('data/assets/jar-loading.gif'),
+            fit: BoxFit.cover,
+            height: 300.0,
+            fadeInDuration: Duration(milliseconds: 200),
+          ),
+
+          // Image(
+          //   image: NetworkImage(
+          //       'http://hdwpro.com/wp-content/uploads/2019/02/Best-Landscape-4K.jpg'),
+          // ),
+          Container(
+            child: Text('Algún subtitulo con texto a elección'),
+            padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 30.0),
           )
         ],
       ),
