@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class CardPage extends StatelessWidget {
   @override
@@ -80,12 +81,15 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
+    Random _random = new Random();
+
+    var num = _random.nextInt(100);
     final card = Container(
       // elevation: 10.0,
       child: Column(
         children: <Widget>[
           FadeInImage(
-            image: new NetworkImage('https://picsum.photos/1000/667'),
+            image: new NetworkImage('https://picsum.photos/id/$num/1000/667'),
             placeholder: AssetImage('data/assets/jar-loading.gif'),
             fit: BoxFit.cover,
             height: 300.0,

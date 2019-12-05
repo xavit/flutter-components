@@ -14,8 +14,33 @@ class AlertPage extends StatelessWidget {
         },
       ),
       body: Center(
-        child: Text('Hi'),
+        child: RaisedButton(
+          child: Text(
+            'Mostrar Alerta',
+          ),
+          color: Colors.blue,
+          textColor: Colors.white,
+          shape: StadiumBorder(),
+          onPressed: () => {_mostrarAlerta(context)},
+        ),
       ),
     );
+  }
+
+  void _mostrarAlerta(BuildContext context) {
+    showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Titulo'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text('Este es el contenido de la caja de la alerta')
+              ],
+            ),
+          );
+        });
   }
 }
