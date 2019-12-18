@@ -50,7 +50,7 @@ class CardPage extends StatelessWidget {
 
   Widget _cardtipo1() {
     return Card(
-      elevation: 10.0,
+      elevation: 5.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
