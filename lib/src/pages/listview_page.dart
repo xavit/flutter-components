@@ -48,19 +48,32 @@ class _ListaPageState extends State<ListaPage> {
         ));
   }
 
+  Future<Null> obtenerPagina1() async {
+    final duration = new Duration(seconds: 2);
+    new Timer(duration, () {
+      _listaNumeros.clear();
+      _ultimoItem++;
+      _agregar10();
+    });
+    return Future.delayed(duration);
+  }
+
   Widget _crearLista() {
-    return ListView.builder(
-      controller: _scrollController,
-      itemCount: _listaNumeros.length,
-      itemBuilder: (BuildContext context, int index) {
-        final imagen = _listaNumeros[index];
-        return FadeInImage(
-          image: NetworkImage('https://picsum.photos/id/$imagen/500/300'),
-          placeholder: AssetImage('data/assets/04-spinner.gif'),
-          width: 400.0,
-          height: 247.0,
-        );
-      },
+    return RefreshIndicator(
+      onRefresh: obtenerPagina1,
+      child: ListView.builder(
+        controller: _scrollController,
+        itemCount: _listaNumeros.length,
+        itemBuilder: (BuildContext context, int index) {
+          final imagen = _listaNumeros[index];
+          return FadeInImage(
+            image: NetworkImage('https://picsum.photos/id/$imagen/500/300'),
+            placeholder: AssetImage('data/assets/04-spinner.gif'),
+            width: 400.0,
+            height: 247.0,
+          );
+        },
+      ),
     );
   }
 
