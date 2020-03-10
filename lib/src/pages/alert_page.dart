@@ -16,7 +16,7 @@ class AlertPage extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           child: Text(
-            'Mostrar Alerta Javi',
+            'Mostrar Alerta',
           ),
           color: Colors.blue,
           textColor: Colors.white,
